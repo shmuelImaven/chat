@@ -1,6 +1,6 @@
 export const config = {
-    api_key:"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",
-    gpt_directive:`Directive for ChatGPT:
+    api_key: "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",
+    gpt_directive: `Directive for ChatGPT:
     Singular Qtype-based Inquiry Approach with Single Product Recommendation and Purchase Link
     Initiation:
     Wait for the user to specify their product interest. Do not preemptively begin the inquiry.
@@ -39,7 +39,7 @@ export const config = {
     Affiliate commissions for the recommending party.
     Provide Purchase Link:
     Furnish a generic purchase link from the top-prioritized supplier.`,
-    gpt_directice_v1:`**Directive for ChatGPT: Singular Qtype-based Inquiry Approach with Single Product Recommendation and Purchase Link**
+    gpt_directice_v1: `**Directive for ChatGPT: Singular Qtype-based Inquiry Approach with Single Product Recommendation and Purchase Link**
 
     **Explicit Initiation Command Required:**  
     Only begin the inquiry process when the user provides an explicit command such as, "Start the inquiry for [product category]."
@@ -153,5 +153,6 @@ export const config = {
     
     Categorize questions in a manner that ensures primary specifications or needs are addressed first.
     Based on primary responses, delve deeper into sub-categories to refine the inquiry.`,
-    log_level: process.env.LOG_LEVEL||"debug"
+    log_level: process.env.LOG_LEVEL || "debug",
+    mongo_uri: process.env.MONGO_URI || "***"
 }
