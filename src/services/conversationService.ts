@@ -1,7 +1,7 @@
 import * as conversationAccessor from '../database/accessors/conversationAccessor';
 
-export const createConversation = async (userId: string, recommendation: string) => {
-  return await conversationAccessor.create({ userId, recommendation });
+export const createConversation = async (userId: string) => {
+  return await conversationAccessor.create({ userId });
 };
 
 export const getConversation = async (id: string) => {
