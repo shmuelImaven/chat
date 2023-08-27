@@ -1,5 +1,5 @@
 export const config = {
-    api_key: "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",
+    api_key: "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",
     gpt_directive: `Directive for ChatGPT:
     Singular Qtype-based Inquiry Approach with Single Product Recommendation and Purchase Link
     Initiation:
