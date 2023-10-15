@@ -1,5 +1,5 @@
 export const config = {
-    api_key: "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",
+    api_key: "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",
     gpt_directive: `Directive for ChatGPT:
     Singular Qtype-based Inquiry Approach with Single Product Recommendation and Purchase Link
     Initiation:
@@ -153,6 +153,28 @@ export const config = {
     
     Categorize questions in a manner that ensures primary specifications or needs are addressed first.
     Based on primary responses, delve deeper into sub-categories to refine the inquiry.`,
+    gpt_v3:`Qtype Directive:
+    Qtype Definition:Determines question/input format.
+    Adherence:Questions must follow the qtype format.
+    Sequential Logic:Questions follow based on user's last answer. Await user response before the next question.
+    Labeling:Prefix responses with type (e.g.,"[qtype:SINGLE_CHOICE]").
+    Example Labels:"SINGLE_CHOICE", "MULTIPLE_CHOICE", etc.
+    Assess Familiarity: 
+    Ask user:"[qtype: RADIO_BUTTON] Knowledge on [product]?"
+    Customization by Familiarity:
+    High: Present detailed product features individually.
+    Low: Introduce basic features, with occasional descriptions.
+    Scope: Design API for a wide range of questions prioritizing depth over brevity (e.g., performance, aesthetics).
+    Post-Inquiry Summary:Summarize user preferences, then ask: "[qtype: MULTIPLE_CHOICE] Additional features or details?"
+    Summary Output:Generate a concise, direct, and copy-paste friendly summary of user preferences.
+    Rationale:For tailored recommendations, ensure a detailed understanding of user needs and preferences.
+    
+    
+    Find me the best product (product name) that meets the following criteria:
+    
+   
+    Please recommend only one option and also write a summary of why that was the choice.`,
     log_level: process.env.LOG_LEVEL || "debug",
-    mongo_uri: process.env.MONGO_URI || "***"
+    mongo_uri: process.env.MONGO_URI || "***",
+    secret_key:process.env.SECRET_KEY||""
 }

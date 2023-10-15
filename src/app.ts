@@ -5,9 +5,11 @@ import express from 'express';
 import * as redis from 'redis';
 import rateLimiter from './middleware/rateLimiter';
 import { postMessage } from './controllers/chatController';
+import router from './routes/conversationRoutes';
 import cors from 'cors';
 import { Database } from './database/mondo-db';
 import errorHandler from './middleware/errorHandler';
+import { authMiddleware } from './middleware/auth';
 
 const app = express();
 app.use(cors());
@@ -16,9 +18,9 @@ const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
 app.use(rateLimiter);
+app.use(authMiddleware);
 
-app.post('/chat', postMessage);
-
+app.use(router);
 // Error Handler should be the last middleware
 app.use(errorHandler);
 

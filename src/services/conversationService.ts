@@ -1,6 +1,9 @@
 import * as conversationAccessor from '../database/accessors/conversationAccessor';
+import logger from '../logger';
 
 export const createConversation = async (userId: string) => {
+  logger.info(`createConversation  ${userId}`);
+
   return await conversationAccessor.create({ userId });
 };
 

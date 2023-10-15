@@ -1,7 +1,11 @@
+import logger from '../../logger';
 import Conversation from '../models/conversation';
 
 export const create = async (data: any) => {
+  logger.info(`createConversation  ${create}`);
   const conversation = new Conversation(data);
+  logger.info(`createConversation  ${conversation}`);
+
   return await conversation.save();
 };
 

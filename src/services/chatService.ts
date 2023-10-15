@@ -20,7 +20,7 @@ const getMessagesForUser = async (userId: string): Promise<Array<object>> => {
 
     return JSON.parse(data);
   } catch (err) {
-    logger.error(err);
+    logger.error('--------'+err);
     throw err;
   }
 };
@@ -29,7 +29,7 @@ const saveMessagesForUser = async (userId: string, messages: Array<object>) => {
   try {
     await redisClient.set(userId, JSON.stringify(messages));
   } catch (err) {
-    logger.error(err);
+    logger.error('=========',err);
     throw err;
   }
 };
@@ -38,7 +38,7 @@ const deleteMessagesForUser = async (userId: string): Promise<void> => {
   try {
       await redisClient.del(userId);
   } catch (err) {
-      logger.error(err);
+      logger.error('!!!!!!!',err);
       throw err;
   }
 };
@@ -53,6 +53,7 @@ const getResponseFromGPT = async (userId: string, userMessage: string): Promise<
 
 
     const existingMessages = await getMessagesForUser(userId);
+    
     const newMessageList = [...existingMessages, { role: "user", content: userMessage }] as ChatCompletionRequestMessage[];
     logger.info("send messege for openai")
 
@@ -60,9 +61,11 @@ const getResponseFromGPT = async (userId: string, userMessage: string): Promise<
       model: "gpt-4",
       messages: [{ "role": "system", "content": config.gpt_directice_v1 }, ...newMessageList],
     });
+    logger.info("sent messege for openai")
 
     const response = completion.data.choices[0].message;
 
+    logger.info(completion.data.choices[0].message);
     newMessageList.push({ role: response?.role || "assistant", content: response?.content });
     await saveMessagesForUser(userId, newMessageList);
 
@@ -77,3 +80,7 @@ const getResponseFromGPT = async (userId: string, userMessage: string): Promise<
 };
 
 export { getResponseFromGPT };
+  export function createConversation(userId: any, recommendation?: any) {
+    throw new Error('Function not implemented.');
+  }
+
