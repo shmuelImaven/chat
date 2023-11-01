@@ -3,6 +3,7 @@ import Joi from 'joi';
 import * as chatService from  '../services/chatService';
 import logger from '../logger';
 import * as conversationService from '../services/conversationService';
+import { chatSonicFunction } from '../services/sonicService';
 
 const postMessage = async (req: Request, res: Response): Promise<void> => {
   logger.info("Message arrived");
@@ -33,6 +34,13 @@ const postMessage = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
+const sonicSummery= async (req: Request, res: Response): Promise<void> => {
+  logger.info("sonicSummery")
+  const response =  await chatSonicFunction(req.body.content)
+  res.json({ response });
+
+}
+
 const startChat = async (req: Request, res: Response): Promise<void> => {
   logger.info("Start Chat request");
   try {
@@ -56,4 +64,4 @@ const startChat = async (req: Request, res: Response): Promise<void> => {
 }
 };
 
-export { postMessage, startChat };
+export { postMessage, startChat, sonicSummery };
