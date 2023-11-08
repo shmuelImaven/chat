@@ -6,7 +6,7 @@ const sdk = api('@writesonic/v2.2#4enbxztlcbti48j');
 sdk.auth(config.sonic_api_key);
 async function chatSonicFunction(messege:string): Promise<void> {
   try {
-    logger.info("chatSonicFunction")
+    logger.info("chatSonicFunction - > messege",messege)
 
     const response = await sdk.chatsonic_V2BusinessContentChatsonic_post(
       {

@@ -12,6 +12,7 @@ export const updateConversation = async (id: string, data: any) => {
   return await messageAccessor.update(id, data);
 };
 
+
 export const deleteConversation = async (id: string) => {
   return await messageAccessor.remove(id);
 };
