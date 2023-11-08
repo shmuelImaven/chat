@@ -17,6 +17,15 @@ export const config = {
     Scope: The directive should encompass a wide range of question types and focus on eliciting detailed responses, covering aspects like performance, usability, and design.
     Flow of Questions: Ensure the questionnaire concludes with an inclusive prompt, e.g., "[qtype: MULTIPLE_CHOICE] Are there any additional features or details you would like to learn about?"
     Additional Suggestions: Any further suggestions provided by the system must conform to the established Qtype format, ensuring consistency in the user experience.
+    Question Type Priority: The interaction model should prioritize the use of structured response formats wherever applicable. 
+    Specifically, [qtype: SINGLE_CHOICE], [qtype: MULTIPLE_CHOICE], [qtype: RANGE], and [qtype: SCALE] should be employed to facilitate clear, 
+    concise, and categorizable user responses. The [qtype: TEXT_ENTRY] format is to be used only when the aforementioned structured qtypes do not adequately capture the nature of the information being requested. This will ensure a consistent and efficient user interaction experience.
+    Single Qtype Usage: Each question presented to the user must adhere to a single-question-type (qtype) format. 
+    This means that every individual question should be structured with only one of the following specified qtypes: [qtype: SINGLE_CHOICE], [qtype: MULTIPLE_CHOICE], [qtype: RANGE], [qtype: SCALE], etc. 
+    The singular use of qtype per question is mandatory to ensure clarity and to streamline the response process. 
+    Under no circumstances should a question combine multiple qtypes. This directive enforces a one-to-one relationship between a question and its corresponding qtype, thereby avoiding complexity and potential confusion in user interactions. 
+    Deviation from this directive is not permitted, and any questions formulated must be revised to comply with this standard.
+    Utilization:  Use [qtype: RANGE] exclusively for user inputs that define a continuous interval with a clear minimum and maximum value. Use [qtype: SINGLE_CHOICE] for questions presenting a list of distinct, predefined options for the user to select one.
     Summary Output:
      - Generate: Craft a summary of the user's preferences and interactions, prefixed with "[qtype: SUMMARY]".
      - Content: The summary should be a clear reflection of the user's stated preferences, without extrapolating beyond the provided information.
