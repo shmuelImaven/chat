@@ -24,6 +24,7 @@ async function chatSonicFunction(messege:string): Promise<void> {
       enable_memory: false,
       input_text: messege
   };
+  //test
     const response = await sdk.chatsonic_V2BusinessContentChatsonic_post(
       data,
       {
