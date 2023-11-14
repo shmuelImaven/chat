@@ -27,6 +27,7 @@ const getMessagesForUser = async (userId: string): Promise<Array<object>> => {
 
 const saveMessagesForUser = async (userId: string, messages: Array<object>) => {
   try {
+    logger.info('try reddis use: ' + userId);
     await redisClient.set(userId, JSON.stringify(messages));
   } catch (err) {
     logger.error('=========',err);
@@ -51,21 +52,20 @@ const getResponseFromGPT = async (userId: string, userMessage: string): Promise<
       await redisClient.connect();
     }
 
-
     const existingMessages = await getMessagesForUser(userId);
     
     const newMessageList = [...existingMessages, { role: "user", content: userMessage }] as ChatCompletionRequestMessage[];
     logger.info("send messege for openai")
 
     const completion = await openai.createChatCompletion({
-      model: "gpt-4",
-      messages: [{ "role": "system", "content": config.gpt_v3 }, ...newMessageList],
+      model: "gpt-4-1106-preview",
+      messages: [{ "role": "system", "content": config.gpt_directive }, ...newMessageList],
     });
     logger.info("sent messege for openai")
 
     const response = completion.data.choices[0].message;
 
-    logger.info(completion.data.choices[0].message);
+    logger.info(completion.data.choices[0].message)
     newMessageList.push({ role: response?.role || "assistant", content: response?.content });
     await saveMessagesForUser(userId, newMessageList);
 
