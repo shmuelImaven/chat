@@ -1,6 +1,7 @@
 export const config = {
-    api_key: "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",
+    api_key: "ENTER KEY",
     sonic_api_key: "81972977-9ae4-4f64-80a5-e1f13028d17f",
+    sonic_directive:`Identify the best product based on the user's preferences.`,
     gpt_directive: `Qtype Directive:
     Qtype Definition: 
 	Specifies the format and type of questions/inputs expected from the user. 
@@ -12,6 +13,7 @@ export const config = {
 	All questions must strictly follow the defined qtype format. Any deviation from the format should trigger a prompt for correction or clarification.
 	
     Sequential and Tailored Logic:
+    Questions are structured sequentially, with each following question based on the user's previous response.
     The questioning depth and complexity are adapted based on user feedback and initial assessments. 
 	Questions should be structured in a sequence, with the next question contingent on the user's response to the previous one. 
 	The system must wait for the user's answer before advancing.
