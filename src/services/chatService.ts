@@ -58,8 +58,8 @@ const getResponseFromGPT = async (userId: string, userMessage: string): Promise<
     logger.info("send messege for openai")
 
     const completion = await openai.createChatCompletion({
-      model: "gpt-4",
-      messages: [{ "role": "system", "content": config.gpt_v3 }, ...newMessageList],
+      model: "gpt-4-1106-preview",
+      messages: [{ "role": "system", "content": config.gpt_directive }, ...newMessageList],
     });
     logger.info("sent messege for openai")
 
