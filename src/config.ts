@@ -1,6 +1,7 @@
 export const config = {
     api_key: "sk-SPLVKjKqIkhwyyYVp455T3BlbkFJHcrbmv0nq1uZyEPZfb1Z1",
     sonic_api_key: "81972977-9ae4-4f64-80a5-e1f13028d17f",
+    sonic_directive:`Identify the best product based on the user's preferences.`,
     gpt_directive: `Directive for ChatGPT:
     Singular Qtype-based Inquiry Approach with Single Product Recommendation and Purchase Link
     Initiation:
