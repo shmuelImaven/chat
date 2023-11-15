@@ -1,8 +1,14 @@
 export const config = {
-    api_key: "ENTER KEY",
     sonic_api_key: "81972977-9ae4-4f64-80a5-e1f13028d17f",
-    sonic_directive:`Identify the best product based on the user's preferences.`,
+    sonic_directive:`Identify the best product based on the user's preferences.
+    The preferences may include specific features, price range, size, and other relevant recommendation. 
+    Using this analysis, search for products that match these criteria within the available database or online sources. 
+    Select the product that best fits the outlined specifications, considering factors like customer reviews, product quality, brand reputation, and other pertinent details. 
+    Provide a detailed explanation for the choice, including how the product meets the specified criteria, any additional benefits or features that make it a superior choice, 
+    and a brief comparison with other alternatives. The final recommendation should be presented in a user-friendly format, including the product's name, key features, 
+    price, and a detailed rationale for its selection. Recommendation must be unbiased, based on the user's specified criteria, and reflect the most current product information available.`,
     gpt_directive: `Qtype Directive:
+
     Qtype Definition: 
 	Specifies the format and type of questions/inputs expected from the user. 
 	It defines the method of interaction for each type of question.
@@ -110,6 +116,7 @@ export const config = {
 
 	Enhanced Accuracy: 
 	By providing users with the opportunity to add final details, the summary generated will more accurately reflect their preferences and needs, leading to better user satisfaction and more effective outcomes. 
+    
 	Summary Output Termination: 
     Clause: Upon the generation of the "[qtype: SUMMARY]" reflecting the user's preferences, the system will not initiate any additional qtypes. This summary will serve as the conclusion of the current interaction sequence.
     Follow-up Protocol: Should the user wish to continue interactions post-summary, they must explicitly initiate a new sequence of questions.
