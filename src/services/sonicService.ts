@@ -4,7 +4,8 @@ import logger from '../logger';
 
 const sdk = api('@writesonic/v2.2#4enbxztlcbti48j');
 sdk.auth(config.sonic_api_key);
-async function chatSonicFunction(messege:string): Promise<void> {
+async function chatSonicFunction(messege:any): Promise<void> {
+
   try {
     logger.info("chatSonicFunction")
     const data = {

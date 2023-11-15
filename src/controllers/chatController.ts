@@ -36,7 +36,7 @@ const postMessage = async (req: Request, res: Response): Promise<void> => {
 
 const sonicSummery= async (req: Request, res: Response): Promise<void> => {
   logger.info("sonicSummery")
-  const response =  await chatSonicFunction(req.body.content)
+  const response =  await chatSonicFunction(req.body.content.txt)
   res.json({ response });
 
 }
