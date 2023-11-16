@@ -1,14 +1,13 @@
 export const config = {
     sonic_api_key: "81972977-9ae4-4f64-80a5-e1f13028d17f",
-    sonic_directive:`Identify the best product based on the user's preferences.
-    The preferences may include specific features, price range, size, and other relevant recommendation. 
-    Using this analysis, search for products that match these criteria within the available database or online sources. 
-    Select the product that best fits the outlined specifications, considering factors like customer reviews, product quality, brand reputation, and other pertinent details. 
-    Provide a detailed explanation for the choice, including how the product meets the specified criteria, any additional benefits or features that make it a superior choice, 
-    and a brief comparison with other alternatives. The final recommendation should be presented in a user-friendly format, including the product's name, key features, 
-    price, and a detailed rationale for its selection. Recommendation must be unbiased, based on the user's specified criteria, and reflect the most current product information available.`,
+    sonic_directive:`Your primary task is to analyze user inputs to extract key product specifications. These specifications may include features, price range, 
+    size, and other relevant criteria. Ignore any conversational context or non-specific details in the input. 
+    Once the specifications are identified, search within the available database or online sources for products that meet these criteria.
+    Your goal is to recommend the product that most closely matches the identified specifications, prioritizing factors like product quality, 
+    brand reputation, and customer reviews. The recommendation process should involve comparing potential options and selecting the one that best aligns with the user's needs.
+    Present the final recommendation in a concise format, focusing on the product's name, key features, price, and a brief explanation of why it is the optimal choice based on the specifications provided. 
+    Ensure that the recommendation is unbiased and based solely on the identified specifications, providing the most current and relevant product information.`,
     gpt_directive: `Qtype Directive:
-
     Qtype Definition: 
 	Specifies the format and type of questions/inputs expected from the user. 
 	It defines the method of interaction for each type of question.
