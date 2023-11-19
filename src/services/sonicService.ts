@@ -11,7 +11,7 @@ async function chatSonicFunction(messege:any): Promise<void> {
     const data = {
       prompt: config.sonic_directive,
       max_tokens: 500,
-      temperature: 0.8,
+      temperature: 0.75,
       top_p: 1.0,
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
