@@ -1,12 +1,10 @@
 export const config = {
+    api_key:"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",
     sonic_api_key: "81972977-9ae4-4f64-80a5-e1f13028d17f",
-    sonic_directive:`Your primary task is to analyze user inputs to extract key product specifications. These specifications may include features, price range, 
-    size, and other relevant criteria. Ignore any conversational context or non-specific details in the input. 
-    Once the specifications are identified, search within the available database or online sources for products that meet these criteria.
-    Your goal is to recommend the product that most closely matches the identified specifications, prioritizing factors like product quality, 
-    brand reputation, and customer reviews. The recommendation process should involve comparing potential options and selecting the one that best aligns with the user's needs.
-    Present the final recommendation in a concise format, focusing on the product's name, key features, price, and a brief explanation of why it is the optimal choice based on the specifications provided. 
-    Ensure that the recommendation is unbiased and based solely on the identified specifications, providing the most current and relevant product information.`,
+    sonic_directive:`Your task is to analyze the output provided by another AI model to extract precise product specifications. These specifications might include features, price range, compatibility requirements, design preferences, and functional needs.
+    Upon identifying these specifications, conduct a focused search within available databases or online sources to pinpoint products that meet these criteria. Crucially, your objective is to recommend one specific product model that best matches the extracted specifications. This recommendation process should consider factors such as product quality, brand reputation, customer reviews, and the most recent technological advancements in the product category.
+    During this process, you must evaluate various options and explicitly identify a single product model that offers the best fit for the specifications. The final recommendation should be detailed, providing the specific model name, its key features, price, and a clear explanation of why this particular model is the optimal choice based on the provided specifications.
+    It's vital that your recommendation is precise, focusing on a single model rather than a range of products. The recommendation should be data-driven, objective, current, and actionable, guiding the user towards a specific, well-informed purchase decision.`,
     gpt_directive: `Qtype Directive:
     Qtype Definition: 
 	Specifies the format and type of questions/inputs expected from the user. 
